@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="background cooper">
@@ -24,7 +25,10 @@
 		</div>
 		</div>
 	</nav>
-	<div class="container-fluid">
+	<div class="loading" id="loading-symbol" style="display: block;">
+		<i class="fa fa-circle-o-notch fa-spin loading"></i>
+	</div>
+	<div class="container-fluid hidden" id="root">
 		<div class="row">
 			<div class="col-md-6">
 				<article class="shadow">
@@ -260,14 +264,10 @@
 								<p>666.69 (21-02-20)</p>
 							</div>
 							<div class="col-md-3">
-								<p>Server Uptime</p>
-								<p>Response Time</p>
 								<p>API calls today</p>
 							</div>
 							<div class="col-md-3">
-								<p>99.99%</p>
-								<p>108ms</p>
-								<p>42069</p>
+								<p id="api-calls">0</p>
 							</div>
 						</div>
 
@@ -294,6 +294,8 @@
 			</div>
 		</div>
 	</div>
+
+	<script src="/js/dist/stats.js"></script>
 </body>
 
 </html>
