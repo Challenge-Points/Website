@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
 })
 
 async function setStats() {
-    fetch('http://localhost:80/api/stats/all').catch(apiDown).then(async res => {
+    fetch(`${api_url}/stats/all`).catch(apiDown).then(async res => {
         if (!res) return;
         var data = await res.json() as statsData
 

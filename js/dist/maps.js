@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
 async function getMaps() {
     var wholeTable = document.getElementById('maps-table');
     var loading = document.getElementById('loading-symbol');
-    var maps = await (await fetch('/api/maps/all')).json().catch(() => {
+    var maps = await (await fetch(`${api_url}/maps/all`)).json().catch(() => {
         var error = document.getElementsByClassName('error')[0];
         error.innerHTML = "Error getting maps. 404 Not Found";
         error.classList.remove('hidden');
@@ -14,19 +14,18 @@ async function getMaps() {
     });
     var table = document.getElementById('cp_table');
     maps.forEach(async (map) => {
-        var scores = await (await fetch(`/api/maps/${map.hash}/scores`)).json();
         var row = document.createElement('tr');
         var name = document.createElement('th');
-        name.innerHTML = `<img src="${map.cover}" class='pfp'> &nbsp; ${map.name}`;
+        name.innerHTML = `<img src="${map.cover}" class='pfp'> &nbsp; ${map.map_name}`;
         row.appendChild(name);
         var mapper = document.createElement('th');
-        mapper.innerText = map.mapper;
+        mapper.innerText = map.mapper_name;
         row.appendChild(mapper);
         var scoreCount = document.createElement('th');
-        scoreCount.innerText = scores.scores.length.toString();
+        scoreCount.innerText = map.scores_set;
         row.appendChild(scoreCount);
         var cp = document.createElement('th');
-        cp.innerText = map.cp + ' CP';
+        cp.innerText = map.max_cp + ' CP';
         row.appendChild(cp);
         table.appendChild(row);
     });
