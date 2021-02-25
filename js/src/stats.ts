@@ -37,7 +37,11 @@ type statsData = {
                 "lastLogTypeBeforeStartDate": {}
             }
         ]
-    }
+    },
+    "in_queue":0,
+    "users_registerd":0,
+    "maps_ranked":0,
+    "scores_set":0
 }
 
 window.addEventListener('load', () => {
@@ -50,6 +54,10 @@ async function setStats() {
         var data = await res.json() as statsData
 
         document.getElementById('api-calls').innerText = data.apicalls.toString()
+        document.getElementById('scores-set').innerText = data.scores_set.toString()
+        document.getElementById('ranked-maps').innerText = data.maps_ranked.toString()
+        document.getElementById('registerd-users').innerText = data.users_registerd.toString()
+        document.getElementById('in-queue').innerText = data.in_queue.toString()
 
         document.getElementById('loading-symbol').classList.add('hidden')
         document.getElementById('root').classList.remove('hidden')
