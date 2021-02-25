@@ -8,7 +8,11 @@ type map = {
     cover: string
 }
 
-window.onload = async () => {
+window.addEventListener('load', () => {
+    getMaps()
+})
+
+async function getMaps() {
     var wholeTable = document.getElementById('maps-table')
     var loading = document.getElementById('loading-symbol')
 

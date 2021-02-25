@@ -1,5 +1,8 @@
 "use strict";
-window.onload = async () => {
+window.addEventListener('load', () => {
+    getMaps();
+});
+async function getMaps() {
     var wholeTable = document.getElementById('maps-table');
     var loading = document.getElementById('loading-symbol');
     var maps = await (await fetch('/api/maps/all')).json().catch(() => {
@@ -29,7 +32,7 @@ window.onload = async () => {
     });
     wholeTable.classList.remove('hidden');
     loading.classList.add('hidden');
-};
+}
 /*
 <tr>
     <th><img src="src/Maps/b6b84dc10c68d379215a54ece4b108e5cfe084d8.jpg" class='pfp'> &nbsp; TTFAF but its all resets</th>
