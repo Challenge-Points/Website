@@ -1,4 +1,4 @@
-var api_url = 'https://challenge-points-dev.herokuapp.com/api'
+var api_url = "https://challenge-points-dev.herokuapp.com/api"
 
 function apiDown() {
     var error = document.getElementsByClassName('error')[0]
