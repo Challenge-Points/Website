@@ -1,5 +1,5 @@
 "use strict";
-const urlparams = new URLSearchParams(window.location.href);
+const urlparams = new URLSearchParams(window.location.search);
 const page = (urlparams.get('page')) ? urlparams.get('page') : 1;
 function getGlobalUsers() {
     fetch(`${api_url}/users/global/${page}`).catch(apiDown).then(async (res) => {

@@ -1,4 +1,4 @@
-const urlparams = new URLSearchParams(window.location.href)
+const urlparams = new URLSearchParams(window.location.search)
 const page = (urlparams.get('page')) ? urlparams.get('page') : 1
 
 type user = {
