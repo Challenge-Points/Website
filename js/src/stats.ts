@@ -38,15 +38,13 @@ type statsData = {
             }
         ]
     },
-    "in_queue":0,
-    "users_registerd":0,
-    "maps_ranked":0,
-    "scores_set":0
+    "in_queue": 0,
+    "users_registerd": 0,
+    "maps_ranked": 0,
+    "scores_set": 0
 }
 
-window.addEventListener('load', () => {
-    setStats()
-})
+setStats()
 
 async function setStats() {
     fetch(`${api_url}/stats/all`).catch(apiDown).then(async res => {
@@ -62,15 +60,4 @@ async function setStats() {
         document.getElementById('loading-symbol').classList.add('hidden')
         document.getElementById('root').classList.remove('hidden')
     })
-}
-
-function apiDown() {
-    var error = document.getElementsByClassName('error')[0]
-
-    error.innerHTML = "Error getting maps. 404 Not Found"
-    error.classList.remove('hidden')
-    document.getElementById('loading-symbol').classList.add('hidden')
-    document.getElementById('root').classList.remove('hidden')
-
-    return;
 }

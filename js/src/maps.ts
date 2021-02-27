@@ -9,23 +9,13 @@ type map = {
     "cover": string
 }
 
-window.addEventListener('load', () => {
-    getMaps()
-})
+getMaps()
 
 async function getMaps() {
     var wholeTable = document.getElementById('maps-table')
     var loading = document.getElementById('loading-symbol')
 
-    var maps: map[] = await (await fetch(`${api_url}/maps/all`)).json().catch(() => {
-        var error = document.getElementsByClassName('error')[0]
-
-        error.innerHTML = "Error getting maps. 404 Not Found"
-        error.classList.remove('hidden')
-        loading.classList.add('hidden')
-
-        return;
-    })
+    var maps: map[] = await (await fetch(`${api_url}/maps/all`)).json().catch(apiDown)
 
     var table = document.getElementById('cp_table')
 
