@@ -1,14 +1,9 @@
 "use strict";
 // utilities
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
     fill_cp_table();
     fill_stats();
 });
-function removeChildren(node) {
-    while (node.firstChild) {
-        node.removeChild(node.firstChild);
-    }
-}
 function fill_cp_table() {
     // api output example
     var json_cp = {
@@ -37,8 +32,8 @@ function fill_cp_table() {
             { id: 89, user_icon: "src/Team/ThiJNmEnS.png", user_name: "breacche", map: "Let Her Go", score: 123123, acc: "89.96%", cp: 566 },
             { id: 687, user_icon: "src/Team/ThiJNmEnS.png", user_name: "brighthulk", map: "NateWantsToBattle - The Wrecked and The Worried", score: 38448, acc: "89.96%", cp: 566 },
             { id: 148, user_icon: "src/Team/ThiJNmEnS.png", user_name: "bootecia", map: "Seeb, Goodboys, HRVY – Unfamiliar", score: 54354, acc: "89.96%", cp: 566 },
-            { id: 9678, user_icon: "src/Team/ThiJNmEnS.png", user_name: "rozalthiric", map: "Repo by FREDDIE DREDD", score: 38387, acc: "89.96%", cp: 566 }
-        ]
+            { id: 9678, user_icon: "src/Team/ThiJNmEnS.png", user_name: "rozalthiric", map: "Repo by FREDDIE DREDD", score: 38387, acc: "89.96%", cp: 566 },
+        ],
     };
     var cp_head = document.getElementById("cp_head");
     var cp_table = document.getElementById("cp_table");

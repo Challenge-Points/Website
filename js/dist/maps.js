@@ -1,28 +1,28 @@
 "use strict";
 getMaps();
 async function getMaps() {
-    var wholeTable = document.getElementById('maps-table');
-    var loading = document.getElementById('loading-symbol');
-    var maps = await (await fetch(`${api_url}/maps/all`)).json().catch(apiDown);
-    var table = document.getElementById('cp_table');
+    var wholeTable = document.getElementById("maps-table");
+    var loading = document.getElementById("loading-symbol");
+    var maps = await (await fetch(`${api_url}/maps/all/1`)).json().catch(apiDown);
+    var table = document.getElementById("cp_table");
     maps.forEach(async (map) => {
-        var row = document.createElement('tr');
-        var name = document.createElement('th');
+        var row = document.createElement("tr");
+        var name = document.createElement("th");
         name.innerHTML = `<img src="${map.cover}" class='pfp'> &nbsp; ${map.map_name}`;
         row.appendChild(name);
-        var mapper = document.createElement('th');
+        var mapper = document.createElement("th");
         mapper.innerText = map.mapper_name;
         row.appendChild(mapper);
-        var scoreCount = document.createElement('th');
+        var scoreCount = document.createElement("th");
         scoreCount.innerText = map.scores_set;
         row.appendChild(scoreCount);
-        var cp = document.createElement('th');
-        cp.innerText = map.max_cp + ' CP';
+        var cp = document.createElement("th");
+        cp.innerText = map.max_cp + " CP";
         row.appendChild(cp);
         table.appendChild(row);
     });
-    wholeTable.classList.remove('hidden');
-    loading.classList.add('hidden');
+    wholeTable.classList.remove("hidden");
+    loading.classList.add("hidden");
 }
 /*
 <tr>
@@ -31,4 +31,4 @@ async function getMaps() {
     <th>24</th>
     <th>670.48 CP</th>
 </tr>
-*/ 
+*/

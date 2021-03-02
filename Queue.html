@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="background cooper">
@@ -27,35 +28,21 @@
     <div class="container-fluid">
         <article class="shadow">
             <h1 class="white">Queue</h1>
-            <table class="table table-dark">
-                <tbody>
+            <div class="loading" id="loading-symbol">
+                <i class="fa fa-circle-o-notch fa-spin loading"></i>
+            </div>
+            <table class="table table-dark hidden" id="root">
+                <tbody id="table_body">
                     <tr>
                         <td>
-                            <img src="src/Maps/b6b84dc10c68d379215a54ece4b108e5cfe084d8.jpg" class="float-left">
-                            <h2>TTFAF but its all resets</h2>
+                            {map_icon}
+                            <h2>{map_name}</h2>
                             <h3 class="gray">
-                                Key: 128e9
+                                Mapper: {mapper}
                                 <br>
-                                Mapper: ThiJNmEnS
+                                Requested: {req_timestamp}
                                 <br>
-                                Requested: 22-02-2020
-                                <br>
-                                Estimated CP: 670.48
-                            </h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="src/Maps/e47c88cedf15f1b6eb7b20590d264ba1277339bf.jpg" class="float-left">
-                            <h2>Breaking The Habit</h2>
-                            <h3 class="gray">
-                                Key: 2197
-                                <br>
-                                Mapper: avalin
-                                <br>
-                                Requested: 22-02-2020
-                                <br>
-                                Estimated CP: 378.37
+                                Estimated CP: {estimated_cp}
                             </h3>
                         </td>
                     </tr>
@@ -64,6 +51,9 @@
         </article>
     </div>
     </div>
+
+    <script src="js/dist/app.js"></script>
+    <script src="js/dist/queue.js"></script>
 </body>
 
 </html>
