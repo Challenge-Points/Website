@@ -3,6 +3,11 @@
 	src: url('/fonts/cooper-black.otf');
 }
 
+@media only screen and (max-width: 1920px) {
+.scale {
+	zoom: 50%;
+}
+
 .background {
 	background-color: #222222;
 }
@@ -103,8 +108,8 @@ table {
 	color: white;
 }
 
-.table>tbody>tr.no-border>td,
-.table>tbody>tr.no-border>th {
+.table > tbody > tr.no-border > td,
+.table > tbody > tr.no-border > th {
 	border-top: none;
 }
 
