@@ -9,7 +9,7 @@
 	}
 }
 
-@media {
+@media only screen {
 	.scale {
 		zoom: 50%;
 	}
