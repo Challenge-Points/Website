@@ -4,8 +4,9 @@
 }
 
 @media only screen and (max-width: 1920px) {
-.scale {
-	zoom: 50%;
+	.scale {
+		zoom: 50%;
+	}
 }
 
 .background {
