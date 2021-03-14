@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "fs": "^0.0.1-security",
+    "marked": "^2.0.1"
+  },
+  "dependencies": {
+    "easymde": "^2.14.0"
+  }
+}

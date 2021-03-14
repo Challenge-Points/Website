@@ -161,6 +161,12 @@
 	.error {
 		color: red;
 	}
+
+	.center {
+		margin: auto;
+		width: 50%;
+		padding: 10px;
+	}
 }
 
 @media only screen and (min-width: 1921px) {
@@ -317,5 +323,11 @@
 
 	.error {
 		color: red;
+	}
+
+	.center {
+		margin: auto;
+		width: 50%;
+		padding: 10px;
 	}
 }
