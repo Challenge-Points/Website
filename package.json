@@ -1,9 +1,14 @@
 {
-  "devDependencies": {
-    "fs": "^0.0.1-security",
-    "marked": "^2.0.1"
-  },
-  "dependencies": {
-    "easymde": "^2.14.0"
-  }
+	"scripts": {
+		"build:watch": "cd js && tsc --watch"
+	},
+	"devDependencies": {
+		"@types/marked": "^2.0.0",
+		"@types/node": "^14.14.34",
+		"fs": "^0.0.1-security",
+		"marked": "^2.0.1"
+	},
+	"dependencies": {
+		"easymde": "^2.14.0"
+	}
 }
