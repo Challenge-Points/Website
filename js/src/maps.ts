@@ -1,47 +1,47 @@
 type map = {
 	difficulties: string[];
-	mapper_name: string;
-	status: string;
-	map_name: string;
-	max_cp: number;
-	hash: string;
-	scores_set: string;
-	cover: string;
+	mr_n: string; //Mapper Name
+	s: string; //Status
+	m_n: string; //Map Name
+	m_c: number; //Max CP
+	h: string; //Hash
+	s_s: string; //Scores Set
+	c: string; //Cover
 };
 
 getMaps();
 
 async function getMaps() {
-	var wholeTable = document.getElementById("maps-table");
-	var loading = document.getElementById("loading-symbol");
+	var wholeTable = document.getElementById('maps-table');
+	var loading = document.getElementById('loading-symbol');
 
 	var maps: map[] = await (await fetch(`${api_url}/maps/all/1`)).json().catch(apiDown);
 
-	var table = document.getElementById("cp_table");
+	var table = document.getElementById('cp_table');
 
 	maps.forEach(async (map) => {
-		var row = document.createElement("tr");
+		var row = document.createElement('tr');
 
-		var name = document.createElement("th");
-		name.innerHTML = `<img src="${map.cover}" class='pfp'> &nbsp; ${map.map_name}`;
+		var name = document.createElement('th');
+		name.innerHTML = `<img src="${map.c}" class='pfp'> &nbsp; ${map.m_n}`;
 		row.appendChild(name);
 
-		var mapper = document.createElement("th");
-		mapper.innerText = map.mapper_name;
+		var mapper = document.createElement('th');
+		mapper.innerText = map.mr_n;
 		row.appendChild(mapper);
 
-		var scoreCount = document.createElement("th");
-		scoreCount.innerText = map.scores_set;
+		var scoreCount = document.createElement('th');
+		scoreCount.innerText = map.s_s;
 		row.appendChild(scoreCount);
 
-		var cp = document.createElement("th");
-		cp.innerText = map.max_cp + " CP";
+		var cp = document.createElement('th');
+		cp.innerText = map.m_c + ' CP';
 		row.appendChild(cp);
 
 		table.appendChild(row);
 	});
-	wholeTable.classList.remove("hidden");
-	loading.classList.add("hidden");
+	wholeTable.classList.remove('hidden');
+	loading.classList.add('hidden');
 }
 /*
 <tr>
