@@ -1,28 +1,28 @@
-"use strict";
+'use strict';
 getMaps();
 async function getMaps() {
-    var wholeTable = document.getElementById("maps-table");
-    var loading = document.getElementById("loading-symbol");
-    var maps = await (await fetch(`${api_url}/maps/all/1`)).json().catch(apiDown);
-    var table = document.getElementById("cp_table");
-    maps.forEach(async (map) => {
-        var row = document.createElement("tr");
-        var name = document.createElement("th");
-        name.innerHTML = `<img src="${map.cover}" class='pfp'> &nbsp; ${map.map_name}`;
-        row.appendChild(name);
-        var mapper = document.createElement("th");
-        mapper.innerText = map.mapper_name;
-        row.appendChild(mapper);
-        var scoreCount = document.createElement("th");
-        scoreCount.innerText = map.scores_set;
-        row.appendChild(scoreCount);
-        var cp = document.createElement("th");
-        cp.innerText = map.max_cp + " CP";
-        row.appendChild(cp);
-        table.appendChild(row);
-    });
-    wholeTable.classList.remove("hidden");
-    loading.classList.add("hidden");
+	var wholeTable = document.getElementById('maps-table');
+	var loading = document.getElementById('loading-symbol');
+	var maps = await (await fetch(`${api_url}/maps/all/1`)).json().catch(apiDown);
+	var table = document.getElementById('cp_table');
+	maps.forEach(async (map) => {
+		var row = document.createElement('tr');
+		var name = document.createElement('th');
+		name.innerHTML = `<img src="${map.c}" class='pfp'> &nbsp; ${map.m_n}`;
+		row.appendChild(name);
+		var mapper = document.createElement('th');
+		mapper.innerText = map.mr_n;
+		row.appendChild(mapper);
+		var scoreCount = document.createElement('th');
+		scoreCount.innerText = map.s_s;
+		row.appendChild(scoreCount);
+		var cp = document.createElement('th');
+		cp.innerText = map.m_c + ' CP';
+		row.appendChild(cp);
+		table.appendChild(row);
+	});
+	wholeTable.classList.remove('hidden');
+	loading.classList.add('hidden');
 }
 /*
 <tr>
