@@ -8,7 +8,7 @@ async function getMaps() {
 	maps.forEach(async (map) => {
 		var row = document.createElement('tr');
 		var name = document.createElement('th');
-		name.innerHTML = `<img src="${map.cover}" class='pfp'> &nbsp; ${map.map_name}`;
+		name.innerHTML = `<img src="${map.cover}" class='pfp'> &nbsp; ${map.m_n}`;
 		row.appendChild(name);
 		var mapper = document.createElement('th');
 		mapper.innerText = map.mapper_name;

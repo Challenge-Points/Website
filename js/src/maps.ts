@@ -2,7 +2,7 @@ type map = {
 	difficulties: string[];
 	mapper_name: string;
 	status: string;
-	map_name: string;
+	m_n: string;
 	max_cp: number;
 	hash: string;
 	scores_set: string;
@@ -23,7 +23,7 @@ async function getMaps() {
 		var row = document.createElement('tr');
 
 		var name = document.createElement('th');
-		name.innerHTML = `<img src="${map.cover}" class='pfp'> &nbsp; ${map.map_name}`;
+		name.innerHTML = `<img src="${map.cover}" class='pfp'> &nbsp; ${map.m_n}`;
 		row.appendChild(name);
 
 		var mapper = document.createElement('th');
