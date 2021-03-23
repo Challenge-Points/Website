@@ -11,13 +11,13 @@ async function getMaps() {
 		name.innerHTML = `<img src="${map.cover}" class='pfp'> &nbsp; ${map.m_n}`;
 		row.appendChild(name);
 		var mapper = document.createElement('th');
-		mapper.innerText = map.mapper_name;
+		mapper.innerText = map.mr_n;
 		row.appendChild(mapper);
 		var scoreCount = document.createElement('th');
-		scoreCount.innerText = map.scores_set;
+		scoreCount.innerText = map.s_s;
 		row.appendChild(scoreCount);
 		var cp = document.createElement('th');
-		cp.innerText = map.max_cp + ' CP';
+		cp.innerText = map.m_c + ' CP';
 		row.appendChild(cp);
 		table.appendChild(row);
 	});

@@ -1,11 +1,11 @@
 type map = {
 	difficulties: string[];
-	mapper_name: string;
-	status: string;
+	mr_n: string;
+	s: string;
 	m_n: string;
-	max_cp: number;
+	m_c: number;
 	hash: string;
-	scores_set: string;
+	s_s: string;
 	cover: string;
 };
 
@@ -27,15 +27,15 @@ async function getMaps() {
 		row.appendChild(name);
 
 		var mapper = document.createElement('th');
-		mapper.innerText = map.mapper_name;
+		mapper.innerText = map.mr_n;
 		row.appendChild(mapper);
 
 		var scoreCount = document.createElement('th');
-		scoreCount.innerText = map.scores_set;
+		scoreCount.innerText = map.s_s;
 		row.appendChild(scoreCount);
 
 		var cp = document.createElement('th');
-		cp.innerText = map.max_cp + ' CP';
+		cp.innerText = map.m_c + ' CP';
 		row.appendChild(cp);
 
 		table.appendChild(row);
